@@ -1,5 +1,5 @@
 # Bank-Manager
-A Bank Manager Software written purely in python.This software can be used in any Bank systems like ATMs.
+A Software written purely in Python for the management/withdrawal/deposit of money for bank accounts. This software can be used in any bank system like ATMs, kiosks, etc.
 
 # Usage Instructions
 Download all the files in the repository, including the "Data" subfolder and put them all in the same directory.
