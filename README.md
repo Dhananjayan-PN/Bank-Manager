@@ -6,4 +6,3 @@ Download all the files in the repository, including the "Data" subfolder and put
 To start the Bank Manager, run the "BankManager.py" file.
 There are to pre-existing accounts for testing purposes:
 1. Acc no: admin      Password: admin
-2. Acc no: 53590497   Password: 12345678
