@@ -609,7 +609,7 @@ def view_graph():
         button2 = Button(gwin, text='OK', font=fnt, width=10, command=delete_temp, bg='red', fg='white')
         button2.grid(row=1, column=2, pady=10)
         gwin.mainloop()
-    except Exception as ex:
+    except Exception:
         pop = Tk()
         pop.configure(background='DarkSlateGray1')
         pop.iconbitmap(r'Data/Logo.ico')
