@@ -1,4 +1,5 @@
 from tkinter import *
+from PIL import ImageTk, Image
 import datetime
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
@@ -51,6 +52,7 @@ def credential_check():
     else:
         popup = Tk()
         popup.configure(background='DarkSlateGray1')
+        popup.iconbitmap(r'Data/Logo.ico')
         popup.title("ERROR!")
         popup.geometry('350x100+470+300')
         lbl = Label(popup, text='Invalid Login Credentials', font=('Helvetica', 20, 'bold'), bg='DarkSlateGray1')
@@ -87,6 +89,7 @@ def customer(username):
     if users[username][-2] == 'Suspended':
         popup = Tk()
         popup.configure(background='DarkSlateGray1')
+        popup.iconbitmap(r'Data/Logo.ico')
         popup.title("ERROR!")
         popup.geometry('360x130+470+300')
         txt = 'Your Account has been Suspended.\n Please contact your bank.'
@@ -136,6 +139,7 @@ def create_acc():
         except:
             pop = Tk()
             pop.configure(background='DarkSlateGray1')
+            pop.iconbitmap(r'Data/Logo.ico')
             pop.title("ERROR!")
             pop.geometry('370x150+470+300')
             txt = "Please fill out all details."
@@ -158,6 +162,7 @@ def create_acc():
                     file.write('0'+'*'+date+'\n')
                 pop = Tk()
                 pop.configure(background='DarkSlateGray1')
+                pop.iconbitmap(r'Data/Logo.ico')
                 pop.title("Success!")
                 pop.geometry('370x150+470+300')
                 txt = "Account Created! \n Acc no: {}".format(accno)
@@ -170,6 +175,7 @@ def create_acc():
             if e != f:
                 pop = Tk()
                 pop.configure(background='DarkSlateGray1')
+                pop.iconbitmap(r'Data/Logo.ico')
                 pop.title("ERROR!")
                 pop.geometry('370x150+470+300')
                 txt = "Passwords Dont Match !!\n Please try again !"
@@ -185,6 +191,7 @@ def create_acc():
             elif len(e) < 8:
                 pop = Tk()
                 pop.configure(background='DarkSlateGray1')
+                pop.iconbitmap(r'Data/Logo.ico')
                 pop.title("ERROR!")
                 pop.geometry('350x150+470+300')
                 txt = "Password Too Short!!\n Please try again!"
@@ -200,6 +207,7 @@ def create_acc():
         elif len(e) == 0:
             pop = Tk()
             pop.configure(background='DarkSlateGray1')
+            pop.iconbitmap(r'Data/Logo.ico')
             pop.title("ERROR!")
             pop.geometry('370x150+470+300')
             txt = "Please enter a password \n and try again!"
@@ -214,6 +222,7 @@ def create_acc():
         else:
             pop = Tk()
             pop.configure(background='DarkSlateGray1')
+            pop.iconbitmap(r'Data/Logo.ico')
             pop.title("ERROR!")
             pop.geometry('390x100+470+300')
             txt = "Please fill out all details!"
@@ -230,6 +239,7 @@ def create_acc():
 
     popup = Toplevel()
     popup.configure(background='DarkSlateGray1')
+    popup.iconbitmap(r'Data/Logo.ico')
     popup.title("Create Account")
     popup.geometry('450x290+470+250')
     popup.resizable(True, True)
@@ -268,6 +278,7 @@ def del_acc():
         if acc_no not in users.keys():
             pop = Tk()
             pop.configure(background='DarkSlateGray1')
+            pop.iconbitmap(r'Data/Logo.ico')
             pop.title("ERROR!")
             pop.geometry('250x100+470+300')
             lbl = Label(pop, text='Invalid Account!', font=('Helvetica', 20, 'bold'), bg='DarkSlateGray1')
@@ -283,6 +294,7 @@ def del_acc():
             del users[acc_no]
             pop = Tk()
             pop.configure(background='DarkSlateGray1')
+            pop.iconbitmap(r'Data/Logo.ico')
             pop.title("Success!")
             pop.geometry('460x100+470+300')
             lbl = Label(pop, text='Account Deleted Successfully!', font=('Helvetica', 20, 'bold'), bg='DarkSlateGray1')
@@ -292,6 +304,7 @@ def del_acc():
             button3.grid(row=1, column=1, pady=10)
     popup = Tk()
     popup.configure(background='DarkSlateGray1')
+    popup.iconbitmap(r'Data/Logo.ico')
     popup.title("Delete Account")
     popup.geometry('400x160+470+300')
     lbl = Label(popup, text="Account No:", font=('Helvetica', 15, 'bold'), bg='DarkSlateGray1')
@@ -311,6 +324,7 @@ def active_acc():
         if acc_no not in users.keys():
             pop = Tk()
             pop.configure(background='DarkSlateGray1')
+            pop.iconbitmap(r'Data/Logo.ico')
             pop.title("ERROR!")
             pop.geometry('250x100+470+300')
             lbl = Label(pop, text='Invalid Account', font=('Helvetica', 20, 'bold'), bg='DarkSlateGray1')
@@ -321,6 +335,7 @@ def active_acc():
         elif users[acc_no][-2] == 'Active':
             pop = Tk()
             pop.configure(background='DarkSlateGray1')
+            pop.iconbitmap(r'Data/Logo.ico')
             pop.title("ERROR!")
             pop.geometry('340x100+470+300')
             lbl = Label(pop, text='Account already Active!', font=('Helvetica', 20, 'bold'), bg='DarkSlateGray1')
@@ -332,6 +347,7 @@ def active_acc():
             users[acc_no][-2] = "Active"
             pop = Tk()
             pop.configure(background='DarkSlateGray1')
+            pop.iconbitmap(r'Data/Logo.ico')
             pop.title("Success!")
             pop.geometry('450x100+470+300')
             lbl = Label(pop, text='Account Activated Successfully!', font=('Helvetica', 20, 'bold'), bg='DarkSlateGray1')
@@ -342,6 +358,7 @@ def active_acc():
 
     popup = Tk()
     popup.configure(background='DarkSlateGray1')
+    popup.iconbitmap(r'Data/Logo.ico')
     popup.title("Activate Account")
     popup.geometry('400x160+470+300')
     lbl = Label(popup, text="Account No:", font=('Helvetica', 15, 'bold'), bg='DarkSlateGray1')
@@ -361,6 +378,7 @@ def susp_acc():
         if acc_no not in users.keys():
             pop = Tk()
             pop.configure(background='DarkSlateGray1')
+            pop.iconbitmap(r'Data/Logo.ico')
             pop.title("ERROR!")
             pop.geometry('250x100+470+300')
             lbl = Label(pop, text='Invalid Account', font=('Helvetica', 20, 'bold'), bg='DarkSlateGray1')
@@ -371,6 +389,7 @@ def susp_acc():
         elif users[acc_no][-2] == 'Suspended':
             pop = Tk()
             pop.configure(background='DarkSlateGray1')
+            pop.iconbitmap(r'Data/Logo.ico')
             pop.title("ERROR!")
             pop.geometry('410x100+470+300')
             lbl = Label(pop, text='Account already Suspended!', font=('Helvetica', 20, 'bold'), bg='DarkSlateGray1')
@@ -382,6 +401,7 @@ def susp_acc():
             users[acc_no][-2] = "Suspended"
             pop = Tk()
             pop.configure(background='DarkSlateGray1')
+            pop.iconbitmap(r'Data/Logo.ico')
             pop.title("Success!")
             pop.geometry('480x100+470+300')
             lbl = Label(pop, text='Account Suspended Successfully!', font=('Helvetica', 20, 'bold'), bg='DarkSlateGray1')
@@ -391,6 +411,7 @@ def susp_acc():
             button3.grid(row=1, column=1, pady=10)
     popup = Tk()
     popup.configure(background='DarkSlateGray1')
+    popup.iconbitmap(r'Data/Logo.ico')
     popup.title("Suspend Account")
     popup.geometry('400x160+470+300')
     lbl = Label(popup, text="Account No:", font=('Helvetica', 15, 'bold'), bg='DarkSlateGray1')
@@ -406,6 +427,7 @@ def susp_acc():
 def view_accs():
     win = Tk()
     win.configure(background='DarkSlateGray1')
+    win.iconbitmap(r'Data/Logo.ico')
     win.title("Account Graph")
     win.geometry('640x520+300+100')
     lbl1 = Label(win, text='Accounts:-', font=('Helvetica', 30, 'bold'), bg='DarkSlateGray1')
@@ -425,8 +447,9 @@ def view_accs():
 def check_balance(balance):
     popup = Tk()
     popup.configure(background='DarkSlateGray1')
+    popup.iconbitmap(r'Data/Logo.ico')
     popup.title("Balance Amount")
-    popup.geometry('350x100+470+300')
+    popup.geometry('450x100+470+300')
     # txt = "Account Balance: "+str(users[username][1])
     lbl = Label(popup, text="Account Balance: "+str(balance), font=('Helvetica', 20, 'bold'), bg='DarkSlateGray1')
     lbl.grid(row=0, column=0, columnspan=3, pady=10, padx=10)
@@ -443,6 +466,7 @@ def withdraw(bal2):
             pop = Tk()
             pop.configure(background='DarkSlateGray1')
             pop.title("ERROR!")
+            pop.iconbitmap(r'Data/Logo.ico')
             pop.geometry('390x100+470+300')
             lbl = Label(pop, text='Please enter a valid amount', font=('Helvetica', 20, 'bold'), bg='DarkSlateGray1')
             lbl.grid(row=0, column=0, columnspan=3, pady=10, padx=10)
@@ -452,6 +476,7 @@ def withdraw(bal2):
         elif int(amt) <= 0 or '.' in amt:
             pop = Tk()
             pop.configure(background='DarkSlateGray1')
+            pop.iconbitmap(r'Data/Logo.ico')
             pop.title("ERROR!")
             pop.geometry('390x100+470+300')
             lbl = Label(pop, text='Please enter a valid amount', font=('Helvetica', 20, 'bold'), bg='DarkSlateGray1')
@@ -462,6 +487,7 @@ def withdraw(bal2):
         elif eval(amt) >= balance:
             pop = Tk()
             pop.configure(background='DarkSlateGray1')
+            pop.iconbitmap(r'Data/Logo.ico')
             pop.title("ERROR!")
             pop.geometry('300x100+470+300')
             lbl = Label(pop, text='Not Enough Balance !', font=('Helvetica', 20, 'bold'), bg='DarkSlateGray1')
@@ -481,6 +507,7 @@ def withdraw(bal2):
 
             pop = Tk()
             pop.configure(background='DarkSlateGray1')
+            pop.iconbitmap(r'Data/Logo.ico')
             pop.title("Success!")
             pop.geometry('410x100+470+300')
             lbl = Label(pop, text='Cash Withdrawn Successfully !', font=('Helvetica', 20, 'bold'), bg='DarkSlateGray1')
@@ -492,6 +519,7 @@ def withdraw(bal2):
     global popup
     popup = Tk()
     popup.configure(background='DarkSlateGray1')
+    popup.iconbitmap(r'Data/Logo.ico')
     popup.title("Withdraw Cash")
     popup.geometry('450x200+470+300')
     wa = Label(popup, text="Withdrawal Amount :", font=('Helvetica', 15, 'bold'), bg='DarkSlateGray1')
@@ -514,6 +542,7 @@ def change_pass():
         if old != users[username][0]:
             pop = Tk()
             pop.configure(background='DarkSlateGray1')
+            pop.iconbitmap(r'Data/Logo.ico')
             pop.title("ERROR!")
             pop.geometry('390x100+470+300')
             lbl = Label(pop, text='Invalid Password', font=('Helvetica', 20, 'bold'), bg='DarkSlateGray1')
@@ -525,6 +554,7 @@ def change_pass():
             users[username][0] = new
             pop = Tk()
             pop.configure(background='DarkSlateGray1')
+            pop.iconbitmap(r'Data/Logo.ico')
             pop.title("Success!")
             pop.geometry('450x100+470+300')
             lbl = Label(pop, text='Password Changed Successfully', font=('Helvetica', 20, 'bold'), bg='DarkSlateGray1')
@@ -535,6 +565,7 @@ def change_pass():
 
     popup = Tk()
     popup.configure(background='DarkSlateGray1')
+    popup.iconbitmap(r'Data/Logo.ico')
     popup.title("Change Password")
     popup.geometry('450x210+470+300')
     cp = Label(popup, text="Current Password:", font=('Helvetica', 15, 'bold'), bg='DarkSlateGray1')
@@ -568,6 +599,7 @@ def view_graph():
         plt.plot_date(x, y, 'b-')
         gwin = Tk()
         gwin.configure(background='white')
+        gwin.iconbitmap(r'Data/Logo.ico')
         gwin.title("Account Graph")
         gwin.geometry('640x520+300+100')
         canvas = FigureCanvasTkAgg(fig, master=gwin)
@@ -580,6 +612,7 @@ def view_graph():
     except Exception as ex:
         pop = Tk()
         pop.configure(background='DarkSlateGray1')
+        pop.iconbitmap(r'Data/Logo.ico')
         pop.title("ERROR!")
         pop.geometry('200x100+470+300')
         lbl = Label(pop, text='NO Data!!', font=('Helvetica', 20, 'bold'), bg='DarkSlateGray1')
@@ -596,6 +629,7 @@ def deposit(bal2):
         if '.' in amt:
             pop = Tk()
             pop.configure(background='DarkSlateGray1')
+            pop.iconbitmap(r'Data/Logo.ico')
             pop.title("ERROR!")
             pop.geometry('390x100+470+300')
             lbl = Label(pop, text='Please enter a valid amount', font=('Helvetica', 20, 'bold'), bg='DarkSlateGray1')
@@ -606,6 +640,7 @@ def deposit(bal2):
         elif int(amt) <= 0:
             pop = Tk()
             pop.configure(background='DarkSlateGray1')
+            pop.iconbitmap(r'Data/Logo.ico')
             pop.title("ERROR!")
             pop.geometry('390x100+470+300')
             lbl = Label(pop, text='Please enter a valid amount', font=('Helvetica', 20, 'bold'), bg='DarkSlateGray1')
@@ -624,6 +659,7 @@ def deposit(bal2):
                     f.write(str(users[username][1])+'*'+date.isoformat()+'\n')
             pop = Tk()
             pop.configure(background='DarkSlateGray1')
+            popup.iconbitmap(r'Data/Logo.ico')
             pop.title("Success!")
             pop.geometry('430x100+470+300')
             lbl = Label(pop, text='Money Deposited Successfully', font=('Helvetica', 20, 'bold'), bg='DarkSlateGray1')
@@ -634,6 +670,7 @@ def deposit(bal2):
     global popup
     popup = Tk()
     popup.configure(background='DarkSlateGray1')
+    popup.iconbitmap(r'Data/Logo.ico')
     popup.title("Deposit Money")
     popup.geometry('450x200+470+300')
     wa = Label(popup, text="Deposit Amount:", font=('Helvetica', 15, 'bold'), bg='DarkSlateGray1')
@@ -669,16 +706,21 @@ def start():
 
     global top
     top = Tk()
+    top.iconbitmap(r'Data/Logo.ico')
     top.geometry('1366x760+0+0')
-    top.title("BANK OF STONKS")
+    top.title("THE JDAD BANK")
     top.attributes("-fullscreen", True)
     global frame
     frame = Frame(top, bg='DarkSlateGray1')
 
     frame.pack(expand='yes', fill=BOTH)
     # Login Heading
-    H = Label(frame, text="THE BANK OF STONKS", font=('Helvetica', 45, 'bold'), bg='DarkSlateGray1')
-    H.grid(row=1, column=1, columnspan=3, pady=120, padx=350)
+    H = Label(frame, text= " "*20+"THE JDAD BANK", font=('Helvetica', 45, 'bold'), bg='DarkSlateGray1')
+    H.grid(row=1, column=1, columnspan=3, pady=120, padx=50)
+    # Logo
+    img = ImageTk.PhotoImage(Image.open(r'Data/Logo.png'))
+    logo = Label(frame, image = img)
+    logo.grid(row=1, column=1, pady=120, padx=250)
     # Acc Number Field
     AN = Label(frame, text="Account Number :", font=('Helvetica', 20, 'bold'), bg='DarkSlateGray1')
     AN.grid(row=5, column=1, padx=50, pady=5)
