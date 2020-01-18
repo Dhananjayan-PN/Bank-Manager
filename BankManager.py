@@ -152,6 +152,8 @@ def create_acc():
             if e == f and len(e) >= 8:
                 popup.destroy()
                 accno = str(random.randint(10000000,99999999))
+                while accno in users.keys():
+                    accno = str(random.randint(10000000,99999999))
                 name = d
                 password = e
                 date = datetime.datetime.now().isoformat()
