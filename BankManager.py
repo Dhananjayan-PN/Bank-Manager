@@ -659,7 +659,7 @@ def deposit(bal2):
                     f.write(str(users[username][1])+'*'+date.isoformat()+'\n')
             pop = Tk()
             pop.configure(background='DarkSlateGray1')
-            popup.iconbitmap(r'Data/Logo.ico')
+            pop.iconbitmap(r'Data/Logo.ico')
             pop.title("Success!")
             pop.geometry('430x100+470+300')
             lbl = Label(pop, text='Money Deposited Successfully', font=('Helvetica', 20, 'bold'), bg='DarkSlateGray1')
