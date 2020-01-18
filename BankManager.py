@@ -592,6 +592,7 @@ def view_graph():
             os.remove(r"Data/temp.png")
         except:
             pass
+        
     try:
         with open(r"Data/{}.txt".format(username), 'r') as f:
             data = f.readlines()
