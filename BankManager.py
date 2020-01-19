@@ -700,11 +700,11 @@ def relogin():
 
 def start():
     # users dictionary format: {username:[password, money, date_of_creation, city, status, name_of_owner],...}
-    with open("Data//Users.txt", encoding='utf-8') as file:
+    with open("Data//Users.txt", encoding='utf-8') as file: # Users file
         data = file.read()
         global users
         users = eval(decrypt(data))
-    with open("Data//Admin.txt", encoding='utf-8') as file:
+    with open("Data//Admin.txt", encoding='utf-8') as file: # Admin credential file
         data = file.read()
         global admin_pass
         global admin_uname
@@ -742,7 +742,7 @@ def start():
     font = ('Helvetica', 10, 'bold')
     submit = Button(frame, text="SUBMIT", font=font, width=10, command=credential_check, bg='red', fg='white')
     submit.grid(row=10, column=2, pady=50)
-    top.mainloop()
+    top.mainloop() # Closes the tkinter definition and refreshes the page with the above objects
 
 
 start()
