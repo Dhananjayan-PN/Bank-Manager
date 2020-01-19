@@ -596,12 +596,12 @@ def view_graph():
             pass
         
     try:
-        with open(r"Data/{}.txt".format(username), 'r') as f:
+        with open(r"Data/{}.txt".format(username), 'r') as f: # another method of file handling
             data = f.readlines()
-        fig = plt.figure()
+        fig = plt.figure() # creates an object out of the graph
         y = [int(i[:i.index('*')]) for i in data]
-        x = [parser.parse(i[i.index('*')+1:-1]) for i in data]
-        plt.plot_date(x, y, 'b-')
+        x = [parser.parse(i[i.index('*')+1:-1]) for i in data] # convert to datetime object for plotting
+        plt.plot_date(x, y, 'b-') # b- means blue line
         gwin = Tk()
         gwin.configure(background='white')
         gwin.iconbitmap(r'Data/Logo.ico')
@@ -609,7 +609,7 @@ def view_graph():
         gwin.geometry('640x520+300+100')
         canvas = FigureCanvasTkAgg(fig, master=gwin)
         canvas.get_tk_widget().grid(row=0, column=0, columnspan=5)
-        canvas.draw()
+        canvas.draw() # similar to mainloop
         fnt = ('Helvetica', 10, 'bold')
         button2 = Button(gwin, text='OK', font=fnt, width=10, command=delete_temp, bg='red', fg='white')
         button2.grid(row=1, column=2, pady=10)
