@@ -304,6 +304,7 @@ def del_acc():
             fnt = ('Helvetica', 10, 'bold')
             button3 = Button(pop, text='OK', font=fnt, width=10, command=pop.destroy, bg='red', fg='white')
             button3.grid(row=1, column=1, pady=10)
+    
     popup = Tk()
     popup.configure(background='DarkSlateGray1')
     popup.iconbitmap(r'Data/Logo.ico')
@@ -411,6 +412,7 @@ def susp_acc():
             fnt = ('Helvetica', 10, 'bold')
             button3 = Button(pop, text='OK', font=fnt, width=10, command=pop.destroy, bg='red', fg='white')
             button3.grid(row=1, column=1, pady=10)
+    
     popup = Tk()
     popup.configure(background='DarkSlateGray1')
     popup.iconbitmap(r'Data/Logo.ico')
@@ -626,7 +628,7 @@ def view_graph():
 
 
 def deposit(bal2):
-    def withdraw_cash(balance):
+    def withdraw_cash(balance):        
         amt = amount.get()
         popup.destroy()
         if '.' in amt:
@@ -670,6 +672,7 @@ def deposit(bal2):
             fnt = ('Helvetica', 10, 'bold')
             button3 = Button(pop, text='OK', font=fnt, width=10, command=pop.destroy, bg='red', fg='white')
             button3.grid(row=1, column=1, pady=10)
+            
     global popup
     popup = Tk()
     popup.configure(background='DarkSlateGray1')
