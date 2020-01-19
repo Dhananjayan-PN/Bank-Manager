@@ -62,7 +62,7 @@ def credential_check():
         button.grid(row=1, column=1, pady=10)
 
 
-def admin():
+def admin(): # Admin Page definition
     frame.destroy()
     admin_frame = Frame(top, bg='DarkSlateGray1')
     admin_frame.pack(expand='yes', fill=BOTH)
@@ -85,7 +85,7 @@ def admin():
     btn6.grid(row=0, column=4, pady=0, padx=0)
 
 
-def customer(username):
+def customer(username): # Customer Page definition
     if users[username][-2] == 'Suspended':
         popup = Tk()
         popup.configure(background='DarkSlateGray1')
@@ -108,7 +108,7 @@ def customer(username):
         lbl = Label(cust_frame, text=txt, font=('Helvetica', 35, 'bold'), bg='DarkSlateGray1')
         lbl.grid(row=0, column=0, columnspan=4, padx=50, pady=60)
         btn1 = Button(cust_frame, text='View Balance', font=fnt, width=15, bg='black', fg='white')
-        func1 = lambda balance=users[username][1]: check_balance(users[username][1])
+        func1 = lambda balance=users[username][1]: check_balance(users[username][1]) # One-liner function
         btn1.bind('<Button-1>', func=func1)
         btn1.grid(row=1, column=1, pady=30, padx=100)
         btn2 = Button(cust_frame, text='Withdraw Cash', font=fnt, width=15, bg='black', fg='white')
